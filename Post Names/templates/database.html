@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Database</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>DATABASE</h1>
+							<p>See the fellows who have added their names</p>
+                            <table>
+                                <tr>
+									<th rowspan="2">No</th>
+                                    <th rowspan="2">Name</th>
+                                    <th>Posted on</th>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+									<th>Action</th>
+                                </tr>
+                                {% for name, date, time in zip(enumerate(names), dates, times) %}
+                                <tr>
+										<td>{{ name[0]+1 }}</td>
+                                        <td>{{ name[1][0] }}</td>
+                                        <td>{{ date[0] }}</td>
+                                        <td>{{ time[0] }}</td>
+										<form method="POST">
+											<td><button type="submit" value="{{ name[0] }}" name="values">Report</button></td>
+										</form>
+                                </tr>
+                                {% endfor %}
+                            </table>
+							</ul>
+                            <a href="/"><button>Go Home</button></a>
+						</div>
+					</section>
+					
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/skel.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

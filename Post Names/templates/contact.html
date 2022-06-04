@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Code Grammers - Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Come send me a message 😁</p>
+							<div class="split style1">
+								<section>
+									<form action="" method="post">
+										<div class="field half first">
+											<label for="Mname">Name</label>
+											<input type="text" name="Mname" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="5"></textarea>
+										</div>
+                                        {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                          {% for message in messages %}
+                                                <strong>{{ message }}</strong>
+                                          {% endfor %}
+                                        {% endif %}
+                                          {% endwith %}
+										<ul class="actions">
+											<button type="submit">Send Message</button>
+										</ul>
+									</form>
+                                    <a href="/"><button>Home</button></a>
+								</section>
+								<section>
+									<ul class="contact">
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="https://github.com/ShahadilMunawir" class="fa-github"><span class="label">GitHub</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/skel.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

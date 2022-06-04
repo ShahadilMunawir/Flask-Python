@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <a href="/logout">Logout</a>
+        <h1>Admin</h1>
+        <table border="1">
+            <tr>
+                <td>Index</td>
+                <td>Name</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Action</td>
+                </td>
+            </tr>
+            {% for name, date, time in zip(enumerate(names), dates, times) %}
+            <tr>
+                <td>{{ name[0]+1 }}</td>
+                <td>{{ name[1][0] }}</td>
+                <td>{{ date[0] }}</td>
+                <td>{{ time[0] }}</td>
+                <td><a href="/admin/delete/{{ name[0] }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
